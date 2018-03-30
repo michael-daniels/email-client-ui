@@ -36,3 +36,6 @@
 .navbar {
   padding:0px 20px;
 }
+.hide-label {
+  display:none;
+}
