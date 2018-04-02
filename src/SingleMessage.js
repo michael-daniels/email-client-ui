@@ -12,9 +12,15 @@ const SingleMessage = (props) => {
       readStatus = "unread"
     }
 
+    let starStatus = 'fa fa-star-o';
+    if (item.starred === true) {
+      starStatus = "fa fa-star"
+    }
+
     let devLabelVisibility = 'hide-label';
     let gschoolLabelVisibility = 'hide-label';
     let personalLabelVisibility = 'hide-label';
+
     if (item.labels.length === 0) {
       devLabelVisibility = 'hide-label'
       gschoolLabelVisibility = 'hide-label'
@@ -22,15 +28,12 @@ const SingleMessage = (props) => {
     }
     for (let i = 0; i < item.labels.length; i++) {
       if (item.labels[i] === "dev") {
-        console.log('DEV')
         devLabelVisibility = '';
       }
       if (item.labels[i] === "gschool") {
-        console.log('GSCHOOL')
         gschoolLabelVisibility = '';
       }
       if (item.labels[i] === "personal") {
-        console.log('PERSONAL')
         personalLabelVisibility = '';
       }
     }
@@ -43,7 +46,7 @@ const SingleMessage = (props) => {
               <input type="checkbox" />
             </div>
             <div className="col-xs-2">
-              <i className="star fa fa-star"></i>
+            <i class={`${starStatus}`}></i>
             </div>
           </div>
         </div>
