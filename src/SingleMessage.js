@@ -2,6 +2,9 @@ import React from 'react';
 
 const SingleMessage = (props) => {
   console.log("SingleMessage Props", props.singleMessageProps.allMessages)
+  let starFunction = props.singleMessageProps.stateFunctions.starFunc
+
+
 
   let singleMessageMap = props.singleMessageProps.allMessages.map((item) => {
 
@@ -46,7 +49,7 @@ const SingleMessage = (props) => {
               <input type="checkbox" />
             </div>
             <div className="col-xs-2">
-            <i class={`${starStatus}`}></i>
+            <i className={`${starStatus}`} onClick={starFunction}></i>
             </div>
           </div>
         </div>

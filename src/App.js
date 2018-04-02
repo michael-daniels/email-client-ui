@@ -70,14 +70,35 @@ class App extends Component {
   ]
 }
 
+stateFunctions = {
+  markReadFunc: () => {
+    alert('Mark Read')
+  },
+  markUnreadFunc: () => {
+    alert('Mark Unread')
+  },
+  starFunc: () => {
+    alert('Star/Unstar')
+  },
+  deleteFunc: () => {
+    alert('Delete')
+  },
+  applyLabelFunc: () => {
+    alert('Apply Label')
+  },
+  removeLabelFunc: () => {
+    alert('Remove Label')
+  },
+}
+
   render() {
     console.log(this.state.messages)
     return (
       <div className="App">
         <Navbar className="navbar"/>
           <div className="container">
-            <Toolbar />
-            <AllMessages allMessages = {this.state.messages}/>
+            <Toolbar stateFunctions = {this.stateFunctions} />
+            <AllMessages allMessages = {this.state.messages} stateFunctions = {this.stateFunctions}/>
           </div>
       </div>
     );
